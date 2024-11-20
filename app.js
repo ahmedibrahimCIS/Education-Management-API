@@ -1,5 +1,6 @@
 const express =require('express');
 const mongoose = require('mongoose')
+const errorHandler =require("./middleware/errorHandler")
 const studentRouter = require('./routes/studentRoutes')
 const instructRouter =require('./routes/instructorRoutes')
 const courseRouter = require('./routes/courseRoutes')
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use('/students', studentRouter);
 app.use('/instructor', instructRouter);
 app.use('/course',courseRouter);
-
+app.use(errorHandler);
 app.listen(port,()=>{
     console.log(`server running on port ${port}`);
     
