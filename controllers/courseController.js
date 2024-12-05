@@ -1,4 +1,4 @@
-const course = require('../models/courseModel')
+import course from '../models/courseModel.js'
 
 //CRUD OPS
 
@@ -68,5 +68,9 @@ let deleteCourse = async (req,res)=>{
     
 }
 
-
-module.exports = {showCourses,showCourseById,addNewCourse,updatCourse,deleteCourse}
+export {showCourses,
+        showCourseById,
+        addNewCourse,
+        updatCourse,
+        deleteCourse
+};

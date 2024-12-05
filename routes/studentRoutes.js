@@ -1,10 +1,9 @@
-const express =require('express');
-const router = express.Router();
-const validator = require('../middleware/studentValidMw')
-const validate = require('../middleware/regVMw')
-const valid = require('../middleware/logVMw')
-
-const {studentRegister,studentLogin,getAllStudents,getStudent,createStudent,updateStudent,deleteStudent} = require('../controllers/studentController');
+import Router  from 'express';
+const router = Router();
+import validator from '../middleware/studentVMw'
+import valid from '../middleware/logVMw'
+import validate from '../middleware/regVMw'
+import {studentRegister,studentLogin,getAllStudents,getStudent,createStudent,updateStudent,deleteStudent} from '../controllers/studentController';
 
 
 router.route('/registration').post(validate,studentRegister);
@@ -15,4 +14,4 @@ router.route('/').post(validator,createStudent);
 router.route('/:id').put(updateStudent);
 router.route('/:id').delete(deleteStudent);
 
-module.exports = router;
+export default router;

@@ -1,7 +1,7 @@
-const Student = require('../models/studentModel');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
-require('dotenv').config();
+import Student from '../models/studentModel';
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+//require('dotenv').config();
 //registration
 let studentRegister = async (req, res) => {
     try {
@@ -142,4 +142,4 @@ let deleteStudent =async (req,res)=>{
 }
 
 
-module.exports ={studentRegister,studentLogin,getAllStudents,getStudent,createStudent,updateStudent,deleteStudent};
+export {studentRegister,studentLogin,getAllStudents,getStudent,createStudent,updateStudent,deleteStudent};

@@ -1,6 +1,6 @@
-const validator = require('../Util/courseValidator')
+import validator from '../Util/courseValidator'
 
-module.exports = (req,res,nxt)=>{
+export default (req,res,nxt)=>{
     let valid = validator(req.body);
     if (valid) {
         nxt()

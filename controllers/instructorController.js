@@ -1,7 +1,8 @@
-const instructor = require('../models/instructorModel')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
-require('dotenv').config();
+import instructor from '../models/instructorModel'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+//import dotenv from 'dotenv'
+//require('dotenv').config();
 //reg
 let instructorRegister = async (req, res) => {
     try {
@@ -123,4 +124,4 @@ let deleteInstruct =async (req,res)=>{
 }
 
 
-module.exports = {instructorRegister,instructorLogin,getAllInstruct,getInstructById,addNewInstruct,updatInstructInfo,deleteInstruct};
+export {instructorRegister,instructorLogin,getAllInstruct,getInstructById,addNewInstruct,updatInstructInfo,deleteInstruct};

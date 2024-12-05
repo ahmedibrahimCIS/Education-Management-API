@@ -1,9 +1,9 @@
-const express =require('express');
-const mongoose = require('mongoose')
-const errorHandler =require("./middleware/errorHandler")
-const studentRouter = require('./routes/studentRoutes')
-const instructRouter =require('./routes/instructorRoutes')
-const courseRouter = require('./routes/courseRoutes')
+import express from 'express';
+import mongoose from 'mongoose';
+import studentRouter from './routes/studentRoutes.js';
+import instructRouter from './routes/instructorRoutes.js';
+import courseRouter from './routes/courseRoutes.js';
+import errorHandler from './middleware/errorHandler.js';
 
 //DB Config
 mongoose.connect('mongodb://localhost:27017/school').then(()=>{console.log('MongoDB Connected...');
@@ -21,6 +21,7 @@ app.use('/students', studentRouter);
 app.use('/instructor', instructRouter);
 app.use('/course',courseRouter);
 app.use(errorHandler);
+
 app.listen(port,()=>{
     console.log(`server running on port ${port}`);
     

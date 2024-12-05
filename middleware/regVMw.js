@@ -1,11 +1,10 @@
-const validator =require('../Util/regValidator')
+import validator from '../Util/regValidator'
 
-module.exports = (req,res,nxt)=>{
+export default (req,res,nxt)=>{
     let valid = validator(req.body);
-    if(valid){ nxt()}
-    else {
-        res.status(403).send('Forbidden Command');
-
+    if (valid) {
+        nxt()
+    }else{
+        res.status(403).send('Forbidden');
     }
-
 }

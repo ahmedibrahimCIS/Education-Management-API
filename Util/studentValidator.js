@@ -1,4 +1,4 @@
-const Ajv = require('ajv');
+import Ajv from 'ajv';
 const addFormats = require("ajv-formats");
 const ajv = new Ajv();
 addFormats(ajv);
@@ -40,4 +40,4 @@ const schema = {
   additionalProperties: false // Disallow extra fields
 };
 
-module.exports = ajv.compile(schema);
+export default ajv.compile(schema);

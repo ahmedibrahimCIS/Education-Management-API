@@ -1,9 +1,9 @@
-const express =require('express');
-const router = express.Router();
-const _validator = require('../middleware/instructorVMw')
-const valid = require('../middleware/regVMw')
-const validate =require('../middleware/logVMw')
-const {instructorRegister,instructorLogin,getAllInstruct,getInstructById,addNewInstruct,updatInstructInfo,deleteInstruct} = require('../controllers/instructorController');
+import Router from 'express';
+const router = Router();
+import _validator from '../middleware/instructorVMw'
+import valid from '../middleware/regVMw'
+import validate from '../middleware/logVMw'
+import {instructorRegister,instructorLogin,getAllInstruct,getInstructById,addNewInstruct,updatInstructInfo,deleteInstruct} from '../controllers/instructorController';
 
 router.route('/registration').post(valid,instructorRegister);
 router.route('/login').post(validate,instructorLogin);
@@ -13,4 +13,4 @@ router.route('/').post(_validator,addNewInstruct);
 router.route('/:id').put(updatInstructInfo);
 router.route('/:id').delete(deleteInstruct);
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-const Ajv = require('ajv')
+import Ajv from 'ajv';
 const ajv = new Ajv();
 
 
@@ -13,4 +13,4 @@ const schema = {
     additionalProperties: false,
   };
 
-module.exports = ajv.compile(schema);
+export default ajv.compile(schema);

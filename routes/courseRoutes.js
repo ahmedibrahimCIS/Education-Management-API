@@ -1,6 +1,6 @@
-const express =require('express')
-const router = express.Router();
-const validator = require('../middleware/courseVMw')
+import Router from 'express';
+const router = Router();
+import validator from '../middleware/courseVMw'
 const {showCourses,showCourseById,addNewCourse,updatCourse,deleteCourse} =require('../controllers/courseController')
 
 router.route('/').get(showCourses);
@@ -9,4 +9,4 @@ router.route('/').post(validator,addNewCourse);
 router.route('/:id').put(updatCourse);
 router.route('/:id').delete(deleteCourse);
 
-module.exports = router;
+export default router;
