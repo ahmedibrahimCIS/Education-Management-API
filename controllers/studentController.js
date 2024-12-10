@@ -1,8 +1,9 @@
 import Student from '../models/studentModel';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-//require('dotenv').config();
-//registration
+import dotenv from 'dotenv';
+dotenv.config();
+
 let studentRegister = async (req, res) => {
     try {
   const { name ,id, dept, email, password, confirmPassword } = req.body;
