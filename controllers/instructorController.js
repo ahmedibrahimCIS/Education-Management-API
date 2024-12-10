@@ -1,8 +1,8 @@
 import instructor from '../models/instructorModel'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
-('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 //reg
 let instructorRegister = async (req, res) => {
