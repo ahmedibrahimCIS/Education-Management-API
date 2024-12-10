@@ -4,6 +4,8 @@ import studentRouter from './routes/studentRoutes.js';
 import instructRouter from './routes/instructorRoutes.js';
 import courseRouter from './routes/courseRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 //DB Config
 mongoose.connect('mongodb://localhost:27017/school').then(()=>{console.log('MongoDB Connected...');
